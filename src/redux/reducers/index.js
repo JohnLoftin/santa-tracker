@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { map } from './map';
+import wishlist from './wishlist';
 
-export default combineReducers({ map });
+export default combineReducers({ wishlist });
