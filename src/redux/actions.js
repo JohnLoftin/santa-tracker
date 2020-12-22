@@ -14,9 +14,14 @@ export const addToWishlist = content => ({
     }
 })
 
-export const removeFromWishlist = id => ({
-    type: REMOVE_FROM_WISHLIST,
-    id
-})
+export const removeFromWishlist = id => {
+    console.log(id)
+    return {
+        type: REMOVE_FROM_WISHLIST,
+        payload: {
+            id
+        }
+    }
+}
 
 

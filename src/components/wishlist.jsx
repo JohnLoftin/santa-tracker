@@ -4,10 +4,9 @@ import React from 'react';
 import { addToWishlist, removeFromWishlist } from '../redux/actions';
 import wishlist from '../redux/reducers/wishlist';
 
-const Wishlist = ({ addToWishlist, wishlist, byIds }) => {
+const Wishlist = ({ addToWishlist, removeFromWishlist, wishlist, byIds }) => {
 
     const [input, setInput] = useState('');
-    const [item, deleteItem] = useState('');
 
     let updateInput = e => {
         setInput(e.target.value);
@@ -18,13 +17,12 @@ const Wishlist = ({ addToWishlist, wishlist, byIds }) => {
         setInput("");
     };
 
-    let handleDeleteItem = () => {
-        removeFromWishlist(item);
-        deleteItem("");
-    }
+    let handleDeleteItem = (id) => {
+        removeFromWishlist(id);
+    };
 
     const items = wishlist.map((itemId, index) => {
-        return <li key={`${itemId}-${index}`}>{byIds[itemId].content} <button onClick={handleDeleteItem}>Delete</button></li>
+        return <li key={`${itemId}-${index}`}>{byIds[itemId].content} <button key={`${itemId}-${index}`} onClick={() => handleDeleteItem(itemId)}>Delete</button></li>
     });
     
     return (

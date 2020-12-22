@@ -45,9 +45,9 @@ header {
 
 main {
   background-image: url("./utils/img/snow.gif");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: 100%;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 footer {
@@ -79,7 +79,7 @@ footer {
 .map {
   margin: auto;
   width: 100%;
-  /* padding-top: 25px; */
+  padding-top: 25px;
   padding-bottom: 50px;
 }
 
